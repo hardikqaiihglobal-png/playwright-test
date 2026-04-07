@@ -1,11 +1,10 @@
 import { test, expect, Page, Locator } from '@playwright/test';
 
 test('Go to UPHQ webite', async ({ page }) => {
-    test.setTimeout(120000); 
+  
      
 await page.goto('https://coaches-office.ultimateplayerhq.com/login', {
-  waitUntil: 'networkidle',
-  timeout: 50000
+
 });
 
 
@@ -195,15 +194,16 @@ await page.getByRole('button', { name: 'Players' }).click();
   await page.getByRole('img', { name: 'Record' }).click();
 
   //! click on pop up ok button
-
-  await page.  getByRole('button', { name: 'Ok' }).click();
+   await page.pause(); // ⬅️ Opens Playwright Inspector, freeze test here
+await page.getByRole('button', { name: 'Ok' }).click();
+ // await page.  getByRole('button', { name: 'Ok' }).click();
 
 
   // ! Click on project button side bar
 
 
   await page.getByRole('button', { name: 'Save', exact: true }).click();
-
+ await page.pause();
   await page.getByRole('button', { name: 'Ok' }).click();
 
   // ! change pitch
@@ -228,7 +228,7 @@ await page.getByRole('button', { name: 'Take a Tour' }).click();await page.getBy
 
 const nextBtn = page.getByRole('button', { name: 'Next' });
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 29; i++) {
   await nextBtn.click();
   await page.waitForTimeout(500);
 }
