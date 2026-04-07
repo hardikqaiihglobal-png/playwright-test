@@ -18,13 +18,12 @@ test('Go to visit automation testing website', async ({ page }) => {
   await page.getByRole('combobox', { name: 'Country:' }).selectOption('India');
 
   await page.locator('option').filter({ hasText: 'Green' }).first().click();
-
+  
   await page.getByText('Cheetah', { exact: true }).click();
 
   await page.locator('#datepicker').fill('2026-03-26');
 
   await page.keyboard.press('Escape');
-
 
   // Select date 27 August 2000 in the #txtDate datepicker
   await page.evaluate(() => {
@@ -63,6 +62,7 @@ await newPage.waitForTimeout(3000);
 
 
 await newPage.close();
+
 
     
 
