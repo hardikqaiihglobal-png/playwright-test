@@ -234,6 +234,12 @@ for (let i = 0; i < 29; i++) {
 
 await page.getByRole('button', { name: 'Finish' }).click();
 
+// ! close
+
+await page.getByRole('button', { name: 'Close' }).click();
+await page.getByRole('button', { name: 'Ok' }).click();
+await page.getByRole('button', { name: 'Back to Home' }).click();
+
 
 
 });
