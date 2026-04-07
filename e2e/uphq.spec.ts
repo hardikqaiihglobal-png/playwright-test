@@ -17,9 +17,7 @@ await page.goto('https://coaches-office.ultimateplayerhq.com/login', {
 
   await page.locator('#password:visible').fill('Developer@Test2024');
 
-  await page.locator("body > div:nth-child(2) > div:nth-child(1) > section:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > button:nth-child(1) > img:nth-child(1)").click();
-
-
+await page.getByRole('button', { name: 'Login' }).click();
 
   //  ! Click on whiteboard
 
@@ -134,7 +132,7 @@ await page.getByRole('button', { name: 'Players' }).click();
 
   await page.getByRole('button', { name: 'Animate' }).click();
 
-  await await page.locator("//img[@src='https://coaches-office.ultimateplayerhq.com/assets/images/session_images/add_frame.svg']").click();
+  await page.locator("//img[@src='https://coaches-office.ultimateplayerhq.com/assets/images/session_images/add_frame.svg']").click();
   
   // ! new animation frame 2
 
@@ -235,9 +233,6 @@ for (let i = 0; i < 29; i++) {
 
 
 await page.getByRole('button', { name: 'Finish' }).click();
-
-
-
 
 
 
