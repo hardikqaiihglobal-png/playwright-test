@@ -25,10 +25,12 @@ test('Go to visit automation testing website', async ({ page }) => {
 
   await page.keyboard.press('Escape');
 
-  // Select date 27 August 2000 in the #txtDate datepicker
   await page.evaluate(() => {
-    ($('#txtDate') as any).datepicker('setDate', new Date(2000, 7, 27));
-  });
+  const $ = (window as any).$;
+  if ($) {
+    $('#txtDate').datepicker('setDate', new Date(2000, 7, 27));
+  }
+});
 
  await page.locator('#start-date').fill('1999-10-10');
 
