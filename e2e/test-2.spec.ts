@@ -9,7 +9,20 @@ test('test', async ({ page }) => {
     }
   });
 
-await page.getByRole('button', { name: 'Submit' }).click();
+const response = await page.request.post('/api/submit', {
+  data: {
+    requiredField1: 'value1',
+    requiredField2: 'value2',
+    optionalField: null,
+  },
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+expect(response.ok()).toBeTruthy();
+console.log(await response.json()); // See response body
+
 
 });
 
