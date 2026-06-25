@@ -45,7 +45,7 @@ await page.locator('#multipleFilesInput').setInputFiles([
   '/home/user/Pictures/Logos/35322171_8_1sasa11.jpg',
   '/home/user/Pictures/Logos/33601908_8041938.jpg'
 ]);
-
+            
 await page.locator(`//tr[td[normalize-space()='1']]//input[@type='checkbox']`).check();
 await page.locator(`//tr[td[normalize-space()='5']]//input[@type='checkbox']`).check();
 await page.locator('a').filter({ hasText: '3' }).first().click();
@@ -63,7 +63,8 @@ const [newPage] = await Promise.all([
 await newPage.waitForTimeout(3000);
 
 
-await newPage.close();
+//await newPage.close();
+await page.bringToFront();
 
 
     

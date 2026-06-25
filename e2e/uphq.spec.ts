@@ -17,7 +17,7 @@ await page.goto('https://coaches-office.ultimateplayerhq.com/login', {
 
   await page.locator('#password:visible').fill('Developer@Test2024');
 
-await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'Login' }).click();
 
   //  ! Click on whiteboard
 
@@ -50,7 +50,7 @@ await page.locator('#team_setting').getByRole('button', { name: 'Save' }).click(
 
 
 
-  await page.getByPlaceholder('Session Name').fill('Test 2Session');
+  await page.getByPlaceholder('Session Name').fill('Test 3 hardik Session');
 
   await page.locator("#sliderText").click();
 

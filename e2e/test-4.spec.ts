@@ -9,6 +9,8 @@ test('Create 10 Dentists', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).fill('12345678');
   await page.getByRole('button', { name: 'Sign in' }).click();
     await page.getByRole('link', { name: 'For Dentists' }).click();
+
+    
   for (let i = 1; i <= 10; i++) {
 
     // Navigate each time (depends on app behavior)
